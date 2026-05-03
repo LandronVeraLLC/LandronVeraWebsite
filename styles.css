@@ -773,15 +773,16 @@ a.practice-item {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
+  grid-template-columns: 1.4fr 1fr;
   gap: 5rem;
-  margin-top: 3rem;
+  margin-top: 0;
 }
 
 .contact-info {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  order: 2;
 }
 
 .contact-detail {
@@ -815,13 +816,18 @@ a.practice-item {
 
 .contact-card {
   align-self: start;
-  border-left: 1px solid var(--border);
-  padding-left: 3rem;
+  border-right: 1px solid var(--border);
+  padding-right: 3rem;
+  order: 1;
 }
 
-.contact-card p:first-child {
+.contact-card .section-title {
+  margin-bottom: 1.25rem;
+}
+
+.contact-card-copy {
   max-width: 34rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   color: var(--ink);
   font-size: 1rem;
   font-weight: 300;
@@ -843,6 +849,20 @@ a.practice-item {
 .contact-actions .btn-ghost:hover {
   border-color: var(--gold);
   color: var(--gold);
+}
+
+@media (max-width: 1180px) and (orientation: portrait) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .contact-card {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding-right: 0;
+    padding-bottom: 2rem;
+  }
 }
 
 .form-note {
@@ -1084,9 +1104,11 @@ footer {
 
   .contact-card {
     border-left: none;
-    border-top: 1px solid var(--border);
+    border-right: none;
+    border-bottom: 1px solid var(--border);
     padding-left: 0;
-    padding-top: 2rem;
+    padding-right: 0;
+    padding-bottom: 2rem;
   }
 
   .stat-row {
