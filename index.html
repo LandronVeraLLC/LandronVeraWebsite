@@ -29,7 +29,7 @@
           <button id="btnEN" type="button" class="active" data-lang-switch="en">EN</button>
           <button id="btnES" type="button" data-lang-switch="es">ES</button>
         </div>
-        <a href="#contact" class="nav-cta" data-en="Free Consultation" data-es="Consulta Gratis">Free Consultation</a>
+        <!-- <a href="#contact" class="nav-cta" data-en="Free Consultation" data-es="Consulta Gratis">Free Consultation</a> -->
         <button class="hamburger" type="button" aria-label="Menu" aria-controls="mobileMenu" aria-expanded="false" data-menu-toggle>
           <span></span>
           <span></span>
@@ -262,7 +262,6 @@
             <div class="contact-detail">
               <div class="contact-detail-label" data-en="Telephone" data-es="Tel&eacute;fono">Telephone</div>
               <div class="contact-detail-value">
-                <a href="tel:+17873957885">787-395-7885</a><br>
                 <a href="tel:+17873957886">787-395-7886</a>
               </div>
             </div>
@@ -278,52 +277,16 @@
             </div>
           </div>
 
-          <form class="contact-form reveal" id="contactForm">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="firstName" data-en="First Name" data-es="Nombre">First Name</label>
-                <input id="firstName" name="firstName" type="text" required>
-              </div>
-              <div class="form-group">
-                <label for="lastName" data-en="Last Name" data-es="Apellido">Last Name</label>
-                <input id="lastName" name="lastName" type="text" required>
-              </div>
+          <div class="contact-card reveal">
+            <p data-en="To schedule a consultation, contact the firm directly by email or telephone." data-es="Para agendar una consulta, comun&iacute;quese directamente con el bufete por correo electr&oacute;nico o tel&eacute;fono.">
+              To schedule a consultation, contact the firm directly by email or telephone.
+            </p>
+            <div class="contact-actions">
+              <a class="btn-primary" href="mailto:landronvera@hotmail.com" data-en="Email the Firm" data-es="Enviar Correo">Email the Firm</a>
+              <a class="btn-ghost" href="tel:+17873957886" data-en="Call the Firm" data-es="Llamar al Bufete">Call the Firm</a>
             </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="email" data-en="Email Address" data-es="Correo Electr&oacute;nico">Email Address</label>
-                <input id="email" name="email" type="email" required>
-              </div>
-              <div class="form-group">
-                <label for="phone" data-en="Phone Number" data-es="Tel&eacute;fono">Phone Number</label>
-                <input id="phone" name="phone" type="tel">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="practiceArea" data-en="Area of Law" data-es="&Aacute;rea de Derecho">Area of Law</label>
-              <select id="practiceArea" name="practiceArea">
-                <option value="" data-en="Select a practice area..." data-es="Seleccione un &aacute;rea...">Select a practice area...</option>
-                <option value="corporate-law" data-en="Corporate Law" data-es="Derecho Corporativo">Corporate Law</option>
-                <option value="commercial-litigation" data-en="Commercial Litigation" data-es="Litigios Comerciales">Commercial Litigation</option>
-                <option value="family-law" data-en="Family Law" data-es="Derecho de Familia">Family Law</option>
-                <option value="immigration-law" data-en="Immigration Law" data-es="Derecho Migratorio">Immigration Law</option>
-                <option value="personal-injury" data-en="Personal Injury" data-es="Da&ntilde;os y Perjuicios">Personal Injury</option>
-                <option value="real-estate" data-en="Real Estate" data-es="Derecho Inmobiliario">Real Estate</option>
-                <option value="other" data-en="Other" data-es="Otro">Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message" data-en="Brief Description of Your Matter" data-es="Descripci&oacute;n Breve de su Asunto">Brief Description of Your Matter</label>
-              <textarea id="message" name="message"></textarea>
-            </div>
-            <div class="form-submit">
-              <p class="form-note" data-en="All communications are confidential." data-es="Toda comunicaci&oacute;n es confidencial.">All communications are confidential.</p>
-              <button type="submit" class="btn-primary" data-en="Send Message" data-es="Enviar Mensaje">Send Message</button>
-            </div>
-            <div id="formSuccess" class="form-success" hidden aria-live="polite" data-en="Thank you. We will be in touch shortly." data-es="Gracias. Nos comunicaremos con usted en breve.">
-              Thank you. We will be in touch shortly.
-            </div>
-          </form>
+            <p class="form-note" data-en="All communications are confidential." data-es="Toda comunicaci&oacute;n es confidencial.">All communications are confidential.</p>
+          </div>
         </div>
       </div>
     </section>

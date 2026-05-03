@@ -735,76 +735,42 @@ section {
   color: var(--gold);
 }
 
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+.contact-card {
+  align-self: start;
+  border-left: 1px solid var(--border);
+  padding-left: 3rem;
 }
 
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-
-.form-group label {
-  font-size: 0.65rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select {
-  background: var(--white);
-  border: 1px solid #ddd8cf;
-  border-radius: 0;
-  padding: 0.75rem 0.9rem;
-  font-family: inherit;
-  font-size: 0.875rem;
-  font-weight: 300;
+.contact-card p:first-child {
+  max-width: 34rem;
+  margin-bottom: 1.5rem;
   color: var(--ink);
-  outline: none;
-  transition: border-color 0.2s;
-  -webkit-appearance: none;
-  appearance: none;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.8;
 }
 
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
-  border-color: var(--gold);
-}
-
-.form-group textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.form-submit {
+.contact-actions {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.contact-actions .btn-ghost {
+  border-color: rgba(184, 150, 62, 0.55);
+  color: var(--ink);
+}
+
+.contact-actions .btn-ghost:hover {
+  border-color: var(--gold);
+  color: var(--gold);
 }
 
 .form-note {
   font-size: 0.72rem;
   font-weight: 300;
   color: var(--muted);
-}
-
-.form-success {
-  margin-top: 0.5rem;
-  color: var(--gold);
-  font-size: 0.85rem;
 }
 
 footer {
@@ -991,7 +957,6 @@ footer {
 
   .about-grid,
   .contact-grid,
-  .form-row,
   .attorneys-grid {
     grid-template-columns: 1fr;
   }
@@ -1006,6 +971,13 @@ footer {
   }
 
   .about-aside {
+    border-left: none;
+    border-top: 1px solid var(--border);
+    padding-left: 0;
+    padding-top: 2rem;
+  }
+
+  .contact-card {
     border-left: none;
     border-top: 1px solid var(--border);
     padding-left: 0;
@@ -1032,10 +1004,9 @@ footer {
     left: 1.5rem;
   }
 
-  .form-submit {
-    align-items: flex-start;
+  .contact-actions {
+    align-items: stretch;
     flex-direction: column;
-    gap: 1rem;
   }
 
   .attorney-card {

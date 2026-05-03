@@ -9,8 +9,6 @@ const DOM = {
   root: document.documentElement,
   mobileMenu: document.getElementById("mobileMenu"),
   menuToggle: document.querySelector("[data-menu-toggle]"),
-  contactForm: document.getElementById("contactForm"),
-  formSuccess: document.getElementById("formSuccess"),
   practiceGrid: document.querySelector("[data-practice-grid]"),
   practiceDetail: document.querySelector("[data-practice-detail]"),
   practiceTitle: document.querySelector("[data-practice-title]"),
@@ -20,11 +18,6 @@ const DOM = {
   mobileLinks: Array.from(document.querySelectorAll(".mobile-menu a")),
   practiceItems: Array.from(document.querySelectorAll("[data-practice-item]")),
   translatableElements: Array.from(document.querySelectorAll(SELECTORS.i18nElements)),
-};
-
-const SUCCESS_MESSAGES = {
-  en: "Thank you. We will be in touch shortly.",
-  es: "Gracias. Nos comunicaremos con usted en breve.",
 };
 
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/ {
@@ -99,23 +92,6 @@ function bindMobileMenu() {
 
   DOM.mobileLinks.forEach((link) => {
     link.addEventListener("click", () => toggleMenu(false));
-  });
-}
-
-function bindContactForm() {
-  if (!DOM.contactForm || !DOM.formSuccess) {
-    return;
-  }
-
-  DOM.contactForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    DOM.formSuccess.hidden = false;
-    DOM.formSuccess.textContent = SUCCESS_MESSAGES[currentLang];
-    DOM.contactForm.reset();
-
-    window.setTimeout(() => {
-      DOM.formSuccess.hidden = true;
-    }, 5000);
   });
 }
 
@@ -316,7 +292,6 @@ function bindEditMode() {
 function init() {
   bindLanguageControls();
   bindMobileMenu();
-  bindContactForm();
   bindPracticeGrid();
   initRevealObserver();
   applyTweaks(TWEAK_DEFAULTS);
