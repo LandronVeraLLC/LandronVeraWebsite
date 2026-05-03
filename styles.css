@@ -447,13 +447,13 @@ section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2px;
-  max-width: 900px;
+  max-width: 1100px;
   margin: 3rem auto 0;
 }
 
 .attorney-card {
   background: var(--navy2);
-  padding: 3rem;
+  padding: 3rem 3.5rem;
   border: 1px solid rgba(184, 150, 62, 0.1);
   transition: border-color 0.3s;
 }
@@ -501,7 +501,7 @@ section {
 }
 
 .attorney-bio {
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   font-weight: 300;
   line-height: 1.75;
   color: rgba(247, 244, 239, 0.55);
@@ -531,7 +531,7 @@ section {
 }
 
 .attorney-card-group li {
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 300;
   line-height: 1.45;
   color: rgba(247, 244, 239, 0.62);
@@ -996,6 +996,10 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .attorney-card {
+    padding: 2.5rem;
+  }
+
   .about-grid,
   .contact-grid {
     gap: 3rem;
@@ -1032,6 +1036,10 @@ footer {
     align-items: flex-start;
     flex-direction: column;
     gap: 1rem;
+  }
+
+  .attorney-card {
+    padding: 2rem 1.5rem;
   }
 
   .tweaks-panel {
