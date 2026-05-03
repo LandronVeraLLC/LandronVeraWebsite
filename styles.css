@@ -507,6 +507,40 @@ section {
   color: rgba(247, 244, 239, 0.55);
 }
 
+.attorney-card-credentials {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1.25rem;
+  margin-top: 1.6rem;
+  border-top: 1px solid rgba(184, 150, 62, 0.18);
+  padding-top: 1.25rem;
+}
+
+.attorney-card-group h4 {
+  margin-bottom: 0.45rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.attorney-card-group ul {
+  display: grid;
+  gap: 0.25rem;
+  list-style: none;
+}
+
+.attorney-card-group li {
+  font-size: 0.78rem;
+  font-weight: 300;
+  line-height: 1.45;
+  color: rgba(247, 244, 239, 0.62);
+}
+
+.attorney-card-group:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
 #practice {
   background: var(--white);
 }
@@ -523,26 +557,42 @@ section {
   color: var(--muted);
 }
 
+.practice-grid-wrap {
+  border: 1px solid #e8e3db;
+  background: var(--white);
+  overflow: hidden;
+}
+
 .practice-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  border: 1px solid #e8e3db;
+  margin: -1px -1px 0 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.practice-grid.is-hidden {
+  display: none;
 }
 
 .practice-item {
   display: flex;
   align-items: center;
   gap: 0.6rem;
+  width: 100%;
+  background: var(--white);
+  border: none;
   padding: 1.1rem 1.4rem;
   border-right: 1px solid #e8e3db;
   border-bottom: 1px solid #e8e3db;
+  font-family: inherit;
   font-size: 0.82rem;
   font-weight: 400;
   line-height: 1.4;
   letter-spacing: 0.01em;
   color: #3a3a3a;
+  text-align: left;
   transition: background 0.2s, color 0.2s;
-  cursor: default;
+  cursor: pointer;
 }
 
 .practice-item::before {
@@ -560,8 +610,87 @@ section {
   color: var(--navy);
 }
 
+.practice-item:focus-visible,
+.practice-back:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
 .practice-item:hover::before {
   opacity: 1;
+}
+
+.practice-detail {
+  min-height: 330px;
+  background: var(--white);
+  padding: 2.5rem;
+  animation: practicePanelIn 0.22s ease both;
+}
+
+.practice-detail[hidden] {
+  display: none;
+}
+
+.practice-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 2.25rem;
+  border: 1px solid rgba(184, 150, 62, 0.45);
+  background: var(--cream);
+  padding: 0.75rem 1rem;
+  font-family: inherit;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--navy);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.practice-back span[aria-hidden="true"] {
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--gold);
+  transform: translateY(-1px);
+}
+
+.practice-back:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy);
+}
+
+.practice-back:hover span[aria-hidden="true"] {
+  color: var(--navy);
+}
+
+.practice-detail-title {
+  margin-bottom: 1rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--navy);
+}
+
+.practice-detail p {
+  max-width: 620px;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #3a3a3a;
+}
+
+@keyframes practicePanelIn {
+  from {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .contact-grid {
@@ -846,6 +975,14 @@ footer {
 
   section {
     padding: 4rem 1.5rem;
+  }
+
+  .practice-detail {
+    padding: 2rem 1.5rem;
+  }
+
+  .attorney-card-credentials {
+    grid-template-columns: 1fr;
   }
 
   #hero {
