@@ -20,7 +20,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/ {
   fontStyle: "serif",
 } /*EDITMODE-END*/;
 
-let currentLang = localStorage.getItem(SELECTORS.localStorageLang) || "en";
+let currentLang = localStorage.getItem(SELECTORS.localStorageLang) || "es";
 let tweaksPanel = null;
 
 function updateTranslatedElement(element, lang) {
