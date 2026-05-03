@@ -1,7 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://joseweig.github.io/LandronVeraWebsite/</loc>
+    <loc>https://landronverallc.github.io/LandronVeraWebsite/</loc>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://landronverallc.github.io/LandronVeraWebsite/administrative-law.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://landronverallc.github.io/LandronVeraWebsite/commercial-litigation.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://landronverallc.github.io/LandronVeraWebsite/corporate-law.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://landronverallc.github.io/LandronVeraWebsite/family-law.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://landronverallc.github.io/LandronVeraWebsite/immigration-law.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://landronverallc.github.io/LandronVeraWebsite/insurance-law.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://landronverallc.github.io/LandronVeraWebsite/personal-injury.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://landronverallc.github.io/LandronVeraWebsite/wills-estates.html</loc>
+    <priority>0.8</priority>
   </url>
 </urlset>

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://joseweig.github.io/LandronVeraWebsite/sitemap.xml
+Sitemap: https://landronverallc.github.io/LandronVeraWebsite/sitemap.xml

@@ -9,14 +9,8 @@ const DOM = {
   root: document.documentElement,
   mobileMenu: document.getElementById("mobileMenu"),
   menuToggle: document.querySelector("[data-menu-toggle]"),
-  practiceGrid: document.querySelector("[data-practice-grid]"),
-  practiceDetail: document.querySelector("[data-practice-detail]"),
-  practiceTitle: document.querySelector("[data-practice-title]"),
-  practiceDescription: document.querySelector("[data-practice-description]"),
-  practiceBack: document.querySelector("[data-practice-back]"),
   langButtons: Array.from(document.querySelectorAll("[data-lang-switch]")),
   mobileLinks: Array.from(document.querySelectorAll(".mobile-menu a")),
-  practiceItems: Array.from(document.querySelectorAll("[data-practice-item]")),
   translatableElements: Array.from(document.querySelectorAll(SELECTORS.i18nElements)),
 };
 
@@ -28,7 +22,6 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/ {
 
 let currentLang = localStorage.getItem(SELECTORS.localStorageLang) || "en";
 let tweaksPanel = null;
-let activePracticeItem = null;
 
 function updateTranslatedElement(element, lang) {
   const text = lang === "es" ? element.dataset.es : element.dataset.en;
@@ -60,7 +53,6 @@ function setLang(lang) {
   });
 
   DOM.root.lang = lang;
-  updatePracticeDetail();
 }
 
 function toggleMenu(forceOpen) {
@@ -92,65 +84,6 @@ function bindMobileMenu() {
 
   DOM.mobileLinks.forEach((link) => {
     link.addEventListener("click", () => toggleMenu(false));
-  });
-}
-
-function getPracticeText(item) {
-  if (!item) {
-    return { title: "", description: "" };
-  }
-
-  return {
-    title: currentLang === "es" ? item.dataset.es : item.dataset.en,
-    description: currentLang === "es" ? item.dataset.descEs : item.dataset.descEn,
-  };
-}
-
-function updatePracticeDetail() {
-  if (!activePracticeItem || !DOM.practiceTitle || !DOM.practiceDescription) {
-    return;
-  }
-
-  const practice = getPracticeText(activePracticeItem);
-  DOM.practiceTitle.textContent = practice.title || "";
-  DOM.practiceDescription.textContent = practice.description || "";
-}
-
-function openPracticeDetail(item) {
-  if (!DOM.practiceGrid || !DOM.practiceDetail) {
-    return;
-  }
-
-  activePracticeItem = item;
-  updatePracticeDetail();
-  DOM.practiceGrid.classList.add("is-hidden");
-  DOM.practiceDetail.hidden = false;
-  DOM.practiceBack?.focus();
-}
-
-function closePracticeDetail() {
-  if (!DOM.practiceGrid || !DOM.practiceDetail) {
-    return;
-  }
-
-  const previousItem = activePracticeItem;
-  activePracticeItem = null;
-  DOM.practiceDetail.hidden = true;
-  DOM.practiceGrid.classList.remove("is-hidden");
-  previousItem?.focus();
-}
-
-function bindPracticeGrid() {
-  DOM.practiceItems.forEach((item) => {
-    item.addEventListener("click", () => openPracticeDetail(item));
-  });
-
-  DOM.practiceBack?.addEventListener("click", closePracticeDetail);
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && activePracticeItem) {
-      closePracticeDetail();
-    }
   });
 }
 
@@ -292,7 +225,6 @@ function bindEditMode() {
 function init() {
   bindLanguageControls();
   bindMobileMenu();
-  bindPracticeGrid();
   initRevealObserver();
   applyTweaks(TWEAK_DEFAULTS);
   if (DOM.translatableElements.length || DOM.langButtons.length) {
